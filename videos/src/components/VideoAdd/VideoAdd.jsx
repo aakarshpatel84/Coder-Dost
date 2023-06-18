@@ -24,12 +24,14 @@ const VideoAdd = ({
       img: "https://unsplash.it/600/400",
     };
 
-    editableVideo
-      ? updateVideo({ ...editableVideo, ...text })
-      : setData([...data, newData]);
+    if (editableVideo) {
+      updateVideo({ ...editableVideo, ...text });
+      setEditableVideo(!editableVideo);
+    } else {
+      setData([...data, newData]);
+    }
 
     setText(initalState);
-    setEditableVideo(!editableVideo);
   };
 
   useEffect(() => {
