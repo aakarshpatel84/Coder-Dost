@@ -28,7 +28,9 @@ const VideoAdd = ({
       updateVideo({ ...editableVideo, ...text });
       setEditableVideo(!editableVideo);
     } else {
-      setData([...data, newData]);
+      if (newData.text) {
+        setData([...data, newData]);
+      }
     }
 
     setText(initalState);
