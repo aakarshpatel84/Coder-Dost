@@ -1,4 +1,3 @@
-import "./App.css";
 import Homepage from "./Pages/Homepage";
 
 const App = () => {
