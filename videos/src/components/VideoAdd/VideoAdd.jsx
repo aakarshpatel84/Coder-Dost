@@ -28,9 +28,8 @@ const VideoAdd = ({
       updateVideo({ ...editableVideo, ...text });
       setEditableVideo(!editableVideo);
     } else {
-      if (newData.text) {
-        setData([...data, newData]);
-      }
+      setData([...data, newData]);
+      console.log(text);
     }
 
     setText(initalState);
@@ -62,6 +61,7 @@ const VideoAdd = ({
       <input
         style={{ cursor: "pointer" }}
         type="submit"
+        disabled={!text.title}
         onClick={handleSubmit}
         value={editableVideo ? "📝" : "➕"}
       />
