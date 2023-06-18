@@ -4,7 +4,13 @@ import "./VideoAdd.css";
 
 const initalState = { title: "", views: "", id: null };
 
-const VideoAdd = ({ setData, data, editableVideo, updateVideo }) => {
+const VideoAdd = ({
+  setData,
+  data,
+  editableVideo,
+  setEditableVideo,
+  updateVideo,
+}) => {
   const [text, setText] = useState(initalState);
 
   const handleChange = (e) => {
@@ -23,6 +29,7 @@ const VideoAdd = ({ setData, data, editableVideo, updateVideo }) => {
       : setData([...data, newData]);
 
     setText(initalState);
+    setEditableVideo(!editableVideo);
   };
 
   useEffect(() => {

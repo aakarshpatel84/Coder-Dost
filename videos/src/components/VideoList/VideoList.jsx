@@ -5,7 +5,7 @@ import VideoAdd from "../VideoAdd/VideoAdd";
 
 const VideoList = () => {
   const [data, setData] = useState(Data.videoData);
-  const [editableVideo, setEditableVideo] = useState("");
+  const [editableVideo, setEditableVideo] = useState(null);
 
   const handleDelete = (id) => {
     setData(data.filter((el) => el.id !== id));
@@ -28,6 +28,7 @@ const VideoList = () => {
         setData={setData}
         data={data}
         editableVideo={editableVideo}
+        setEditableVideo={setEditableVideo}
         updateVideo={updatevVideo}
       />
       <div className="video-list-grid">
