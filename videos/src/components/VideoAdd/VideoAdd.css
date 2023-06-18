@@ -3,7 +3,6 @@ form input {
   margin-bottom: 10px;
 }
 form input:last-child {
-  /* background-color: transparent; */
   padding: 10px;
   border: none;
 }
